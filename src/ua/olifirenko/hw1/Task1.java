@@ -5,8 +5,8 @@ public class Task1 {
     String name = "Halyna";
         int height = 177;
         double weight= 60.2;
-        System.out.print(name+" ");
-        System.out.print(height+" ");
+        System.out.print(name + " ");
+        System.out.print(height + " ");
         System.out.print(weight);
     }
 
