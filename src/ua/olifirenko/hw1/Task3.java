@@ -1,6 +1,6 @@
 package ua.olifirenko.hw1;
 
-public class HW1_task3 {
+public class Task3 {
     public static void main(String[] args) {
         int a = 5;
         int b = 3;

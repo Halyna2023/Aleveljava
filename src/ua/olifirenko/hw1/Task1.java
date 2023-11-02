@@ -1,6 +1,6 @@
 package ua.olifirenko.hw1;
 
-public class HW1_task1 {
+public class Task1 {
     public static void main(String[] args) {
     String name = "Halyna";
         int height = 177;
