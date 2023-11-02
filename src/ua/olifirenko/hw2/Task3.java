@@ -2,7 +2,7 @@ package ua.olifirenko.hw2;
 
 ////3. Определить является ли число четным или нет и
 //// вывести результат в консоль.
-public class task3 {
+public class Task3 {
 
     public static void main(String[] args) {
         int number = 56;

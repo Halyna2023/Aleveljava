@@ -1,6 +1,6 @@
 package ua.olifirenko.hw2;
 
-public class task2 {
+public class Task2 {
     public static void main(String[] args) {
         // Define the coordinates of the triangle vertices
         double x1 = 1.0;
