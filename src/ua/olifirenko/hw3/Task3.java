@@ -5,12 +5,12 @@ package ua.olifirenko.hw3;
 
 public class Task3 {
     public static void main(String[] args) {
-        String inputString = " Вводится строка, состоящая из слов Требуется посчитать количество слов в ней.";
+        String inputString = " Вводится     строка, состоящая из слов Требуется посчитать количество слов в ней.";
         System.out.println(inputString);
         String stringWithoutSpaces = inputString.replace(" ", "");
         System.out.println(stringWithoutSpaces);
 
-        String trimmedString = inputString.trim();
+        String trimmedString = inputString.trim().replaceAll(" +"," ");
         System.out.println(trimmedString.split(" ").length);
 
 
