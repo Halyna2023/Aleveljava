@@ -1,5 +1,6 @@
 package ua.olifirenko.hw6;
-// Ошибка сторока 21 написано i место j
+// Ошибка сторока 22 во вложенном цикле опечатка написано i место j  Текст ошибки при запуске Debug"Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+//	at ua.olifirenko.hw6.Task2.main(Task2.java:23)"
 public class Task2 {
 
         public static void main(String[] args) {
