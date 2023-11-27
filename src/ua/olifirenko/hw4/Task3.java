@@ -47,6 +47,9 @@ public class Task3 {
             // Выводим модифицированный массив
             System.out.println("\nМодифицированный массив:");
             printArray(modifiedArray);
+
+            System.out.println("Исходный массив:");
+            printArray(originalArray);
         }
 
         // Метод для генерации массива случайных целочисленных значений в заданном диапазоне
