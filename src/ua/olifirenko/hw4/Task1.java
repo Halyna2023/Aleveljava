@@ -9,43 +9,64 @@ import java.util.Random;
 //        P.S. значения элементов можно ограничить значениями 1-10 включительно.
 public class Task1 {
 
+    public static void main(String[] args) {
+        int[] array = generateRandomArray(400, 1, 10);
 
+        // Выводим массив
+        System.out.println("Сгенерированный массив:");
+        printArray(array);
 
-        public static void main(String[] args) {
-            // Размер массива
-            int size = 400;
+        double arithmeticMean = calcArithmeticMean(array);
+        System.out.println("Среднее арифметическое: " + arithmeticMean);
 
-            // Создаем массив
-            int[] array = new int[size];
+        double geomMean = calcGeomMean(array);
+        System.out.println("Среднее геометрическое: " + geomMean);
+    }
 
-            // Заполняем массив случайными значениями от 1 до 10
-            Random random = new Random();
-            for (int i = 0; i < size; i++) {
-                array[i] = random.nextInt(10) + 1;
-            }
+    // Метод для генерации массива случайных целочисленных значений в заданном диапазоне
+    private static int[] generateRandomArray(int size, int min, int max) {
+        int[] array = new int[size];
+        Random random = new Random();
 
-            // Находим среднее арифметическое
-            double sum = 0;
-            for (int value : array) {
-                sum += value;
-            }
-            double average = sum / size;
-
-            // Находим среднее геометрическое
-            double product = 1;
-            for (int value : array) {
-                product *= value;
-            }
-            double geometricMean = Math.pow(product, 1.0 / size);
-
-            // Выводим результаты
-            System.out.println("Массив:");
-            for (int value : array) {
-                System.out.print(value + " ");
-            }
-            System.out.println("\nСреднее арифметическое: " + average);
-            System.out.println("Среднее геометрическое: " + geometricMean);
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(max - min + 1) + min;
         }
+
+        return array;
+    }
+
+    // Метод для вывода массива
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
+
+    // Метод для вычисления среднего арифметического элементов массива
+    private static double calcArithmeticMean(int[] array) {
+        int sum = 0;
+
+        for (int value : array) {
+            sum += value;
+        }
+
+        return (double) sum / array.length;
+    }
+
+    // Метод для вычисления среднего геометрического элементов массива
+    private static double calcGeomMean(int[] array) {
+        int product = 1;
+
+        for (int value : array) {
+            product *= value;
+        }
+
+        return Math.pow(product, 1.0 / array.length);
+    }
+
+
+
     }
 
 
