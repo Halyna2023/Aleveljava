@@ -1,5 +1,5 @@
 package ua.olifirenko.hw8;
-//1.
+//1. HW8 Task1
 //        Создайте пример наследования, реализуйте класс Student и класс Aspirant,
 //        аспирант отличается от студента наличием некой научной работы.
 //        а) Класс Student содержит переменные: String firstName, lastName,
