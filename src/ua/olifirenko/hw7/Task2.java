@@ -19,9 +19,9 @@ public class Task2 {
 
     public static class Vektor {
         public static class Vector3D {
-            private double x;
-            private double y;
-            private double z;
+            private final double x;
+            private final double y;
+            private final double z;
 
             // Конструктор с параметрами
             public Vector3D(double x, double y, double z) {
