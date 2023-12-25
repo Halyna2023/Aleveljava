@@ -1,11 +1,11 @@
-package ua.olifirenko.hw1;
+package ua.olifirenko.hw14;
 //2. Напишите приложение, которое в 2 потока будет считать количество
 //        простых чисел, которые заданы в массиве, выводить результат и возвращать
 //        его в главный поток.
 //        Главный поток подсчитывает и выводит общее количество.
 import java.util.concurrent.atomic.AtomicInteger;
 public class Task2{
-    public class PrimeNumberCounter {
+    public static class PrimeNumberCounter {
         private static final int[] numbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
         private static final int THREAD_COUNT = 2;
 
