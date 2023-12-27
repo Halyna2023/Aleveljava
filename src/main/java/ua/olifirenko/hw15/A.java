@@ -1,7 +1,21 @@
 package ua.olifirenko.hw15;
 
 import java.lang.reflect.Field;
-
+//1. Создать экземпляр класса с приватным конструктором и изменить значение
+//        переменных:
+//public class A {
+//    private String id = "123";
+//    private String name = "A";
+//    private A() {
+//    }
+//    @Override
+//    public String toString() {
+//        return "A{" +
+//                "id='" + id + '\'' +
+//                ", name='" + name + '\'' +
+//                '}';
+//    }
+//}
 
 public final class A {
     private String id = "123";
@@ -25,8 +39,5 @@ public final class A {
                 '}';
     }
 
-    public static void main(String[] args) {
-        A modifiedInstance = A.createAndModify();
-        System.out.println(modifiedInstance);
-    }
+
 }
