@@ -1,4 +1,4 @@
-package ua.lessonWebDriver;
+package ua.lessonWebDriver.automation_hw1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
