@@ -38,22 +38,32 @@ public class GmailInvalidPasswordTest {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check invalid password login")
-    @Owner("Your Name")
+    @Owner("Halyna Olifirenko")
     public void invalidPasswordLogin() {
         // Enter valid email
         WebElement emailInput = driver.findElement(By.xpath("//input[@id='identifierId']"));
-        emailInput.sendKeys("your.email@gmail.com");
+        emailInput.sendKeys("halyna.oli2023@gmail.com");
         emailInput.sendKeys(Keys.ENTER);
+        
+        
+        WebElement  downloadLike = driver.findElement(By.xpath("//*[@id=\"next\"]/div/div/a"));
+        //svg[@class='icon icon--heart-outline']
+        downloadLike.click();
 
+        WebElement emailInput1 = driver.findElement(By.xpath("//input[@id='identifierId']"));
+        emailInput1.sendKeys("halyna.oli2023@gmail.com");
+        emailInput1.sendKeys(Keys.ENTER);
+        WebDriver driver =new ChromeDriver();
+        WebElement dynamicElement = (WebElement) driver.manage().timeouts().setScriptTimeout(10,TimeUnit.SECONDS);
         // Wait for the password input field
-        WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("password")));
+        WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='password']")));
 
         // Enter invalid password
         passwordInput.sendKeys("invalidPassword");
-        passwordInput.sendKeys(Keys.ENTER);
+       // passwordInput.sendKeys(Keys.ENTER);
 
         // Wait for the error message
-        WebElement errorMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='o6cuMc Jj6Lae']")));
+        WebElement errorMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//div[@aria-live='polite'])[1]//span")));
 
         // Validate the presence of the error message
         Assert.assertTrue(errorMessage.isDisplayed(), "Invalid password error not displayed");
