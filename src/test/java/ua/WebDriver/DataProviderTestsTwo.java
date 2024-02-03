@@ -1,53 +1,22 @@
 package ua.WebDriver;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
+import io.restassured.RestAssured;
 import org.testng.annotations.Test;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
 
-import java.time.Duration;
-
-//teacher
 public class DataProviderTestsTwo {
-private WebDriver webDriver;
 
-    @DataProvider(name = "Date")
-    public Object[][] searchDate()
-    {
-        return new Object[][]{
-                               {"QA"},//,"PM"
-                {"Developer Java"},//"UI/UX"
+    @Test
+    public void testEmojiAPI() {
+        RestAssured.baseURI = "https://api.github.com";
 
-        };
+        given()
+                .when()
+                .get("/emojis")
+                .then()
+                .assertThat()
+                .body(containsString("articulated_lorry"))
+                .statusCode(200);
     }
-
-    @BeforeMethod
-
-    public void before(){
-        webDriver = new ChromeDriver();
-        webDriver.get("https://dou.ua/");
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-    }
-    @AfterMethod
-    public void after(){
-        webDriver.quit();
-    }
-
-    @Test(dataProvider = "Date")
-    public void checkSearch(String data){
-        WebElement input = webDriver.findElement(By.xpath("//input[@id='txtGlobalSearch']"));
-        input.sendKeys(data);
-        input.sendKeys(Keys.ENTER);
-        System.out.println(data);
-    }
-//    {
-//        final Locale actual = Locale.forLanguageTag(locale);
-//        Assert.assertEquals(actual,expected,"Locale is incorrect");
-//    }
 }
